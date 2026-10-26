@@ -1,0 +1,50 @@
+/* A single opaque Bézier panel replaces overlapping translucent hero layers. */
+/* Keep the complete approved homepage composition: no portrait seam or independent zoom. */
+.hero-home .hero-art{inset:0;width:100%;height:100%;aspect-ratio:auto;mask-image:none;clip-path:none;transform:none;will-change:auto}
+.hero-home .hero-inner{min-height:clamp(370px,30.2vw,580px);padding-block:35px 55px}
+.hero-home .hero-copy{width:58%}
+.hero-home>.waves,.hero-home>.hero-shape,.hero-home::after,.hero-home::before{display:none}
+.hero-home .hero-name{display:none}
+.home-original{height:100%;width:100%;background:#004e3e}
+.home-original>svg{width:100%;height:100%}
+.home-badge-content{height:56px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#0d1939;background:white;text-align:center;padding:3px;font-family:Inter,Arial,sans-serif;font-size:8px;line-height:1.5}
+.home-badge-content strong{font-size:9px;letter-spacing:.1px}
+.home-badge-content small{font-size:7px}
+@media(min-width:701px) and (max-width:900px){.hero-home .hero-inner{min-height:0;padding-top:30px;padding-bottom:320px}.hero-home .hero-copy{width:100%;max-width:680px}.hero-home .hero-art{inset:auto 0 0;width:100%;height:300px}}
+@media(max-width:700px){.hero-home .hero-inner{min-height:0;padding:27px 0 279px}.hero-home .hero-copy{width:100%}.hero-home .hero-art{inset:auto 0 0;width:100%;height:269px}.home-badge-svg{display:none}.hero-home .hero-name{display:flex;left:0;top:76%;height:24%;width:45%;font-size:8px;padding:3px}.hero-home .hero-name span,.hero-home .hero-name small{font-size:7px}}
+.hero:not(.hero-home)::before,.hero:not(.hero-home)::after,.hero:not(.hero-home)>.waves,.hero:not(.hero-home)>.hero-shape{display:none}
+.hero:not(.hero-home) .hero-art{inset:0;width:100%;height:100%;clip-path:none;mask-image:none;transform:none;will-change:auto}
+.hero-original{background:var(--forest)}
+.hero-original>svg{height:100%;width:100%;max-width:none}
+.hero-photo-layer{transform:translateY(calc(var(--parallax,0px) * -.12)) scale(1.04);transform-origin:75% 50%;transform-box:view-box}
+@media(max-width:700px){.hero:not(.hero-home) .hero-art{inset:auto 0 0;height:248px;width:100%}.hero-photo-layer{transform:none}}
+
+.hero-home + .container .quick-services{margin-top:-2px}
+
+@media(max-width:700px){.hero-home .hero-name{width:53%;height:25%;top:75%;font-size:11px;line-height:1.35;padding:6px}.hero-home .hero-name span,.hero-home .hero-name small{font-size:9px}}
+
+/* Match the reference proportions and floating services panel. */
+.home-original .home-mobile-art{display:none}
+@media(min-width:901px){.hero-home .hero-inner{width:90%;max-width:none;min-height:34.23vw;padding:3.8vw 0 8vw;display:block}.hero-home h1{font-size:5vw;line-height:1.03;max-width:none}.hero-home .hero-copy{width:59%}.hero-home .hero-copy>p{font-size:2vw;margin-top:1vw}.hero-home .hero-copy .hero-regions{font-size:1.8vw;margin-top:.3vw}.hero-home .hero-copy .button-row{margin-top:1.5vw}.hero-home+.container .quick-services{margin-top:-4.04vw;width:96vw;max-width:none;left:50%;transform:translateX(-50%);position:relative}}
+@media(min-width:701px) and (max-width:900px){.hero-home+.container .quick-services{margin-top:-35px;width:96vw;left:50%;transform:translateX(-50%);position:relative}}
+@media(max-width:700px){.home-original .home-desktop-art{display:none}.home-original .home-mobile-art{display:block}.hero-home+.container .quick-services{margin-top:-2px}}
+
+@media(max-width:700px){.hero-home .hero-inner{padding-bottom:303px}.hero-home .hero-art{bottom:24px}.hero-home+.container .quick-services{margin-top:-24px}}
+
+/* Consistent supporting-page heroes, without a large portrait. */
+@media(min-width:701px){.hero:not(.hero-home) .hero-inner{width:90%;max-width:none;min-height:30vw;padding:36px 0 96px}.hero:not(.hero-home) .hero-copy{width:54%}.hero:not(.hero-home) h1{font-size:clamp(42px,4.3vw,83px);line-height:1.08;max-width:none}.hero:not(.hero-home) .hero-copy>p{font-size:clamp(18px,1.65vw,30px);max-width:90%}.hero:not(.hero-home) .actions{margin-top:23px}}
+.hero:not(.hero-home)+.container>.section:first-child,.hero:not(.hero-home)+.container>.article-meta:first-child{position:relative;z-index:4;background:#fff;border-radius:16px;box-shadow:0 10px 30px #004a3f10;margin-top:-40px;padding:28px}
+.hero:not(.hero-home)+.container>.article-meta:first-child{padding:22px 28px}
+@media(max-width:700px){.hero:not(.hero-home) .hero-inner{padding-bottom:289px}.hero:not(.hero-home) .hero-art{bottom:24px}.hero:not(.hero-home)+.container>.section:first-child,.hero:not(.hero-home)+.container>.article-meta:first-child{margin-top:-24px;padding:20px 16px}.quick-services{border-radius:14px}}
+
+.hero-photo-layer{transform:translateY(calc(var(--parallax,0px) * -.06));transform-origin:center}
+@media(min-width:701px){.hero:not(.hero-home)+.container>.section:first-child,.hero:not(.hero-home)+.container>.article-meta:first-child{width:96vw;max-width:none;left:50%;transform:translateX(-50%)}}
+
+@media(min-width:701px){.hero:not(.hero-home)+.container>.section:first-child,.hero:not(.hero-home)+.container>.article-meta:first-child{margin-top:-48px}}
+
+.hero-original{position:relative;overflow:hidden}.hero-original>.hero-scene{position:absolute;right:0;top:0;width:56%;height:100%;transform:translateY(calc(var(--parallax,0px) * -.06)) scale(1.015);transform-origin:right bottom}.hero-original>.hero-vector{position:absolute;inset:0;width:100%;height:100%}
+@media(min-width:701px){.hero:not(.hero-home) .hero-inner{min-height:26vw;padding-bottom:85px}.hero.hero-article .hero-copy{width:60%}.hero.hero-article h1{font-size:clamp(36px,3.6vw,69px)}}
+@media(max-width:700px){.hero-original>.hero-scene{width:100%;transform:none}.hero-original>.hero-vector{display:none}}
+
+.hero-home{min-height:0}
+@media(min-width:901px) and (max-width:1100px){.hero-home+.container .quick-services{margin-top:calc(-4.04vw - 8px)}}

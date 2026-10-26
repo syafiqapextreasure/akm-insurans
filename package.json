@@ -1,0 +1,21 @@
+{
+  "name": "akm-insurans",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npm run build && wrangler dev --ip 127.0.0.1 --port 8787",
+    "preview": "wrangler dev --ip 127.0.0.1 --port 8787",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run build && npm test",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "5.2.8",
+    "wrangler": "4.153.0"
+  }
+}

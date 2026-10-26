@@ -1,0 +1,132 @@
+[
+  {
+    "path": "/",
+    "title": "Renew Insurans & Roadtax Malaysia",
+    "description": "Semakan insurans, takaful dan roadtax bersama Abdul Kata bin Haji Burijin. Bantuan mesra untuk pelanggan di Sabah, Sarawak dan Semenanjung Malaysia."
+  },
+  {
+    "path": "/perlindungan/",
+    "title": "Pilihan Perlindungan Insurans & Takaful",
+    "description": "Semak pilihan insurans kereta, motosikal, kenderaan komersial, rumah, perniagaan, marin dan takaful untuk keperluan anda."
+  },
+  {
+    "path": "/insurans-kereta/",
+    "title": "Insurans Kereta",
+    "description": "Perlindungan yang sesuai untuk perjalanan anda, dengan proses yang mudah dan bantuan mesra."
+  },
+  {
+    "path": "/insurans-motosikal/",
+    "title": "Insurans Motosikal",
+    "description": "Perlindungan untuk motosikal anda, supaya perjalanan harian lebih tenang."
+  },
+  {
+    "path": "/kenderaan-komersial/",
+    "title": "Insurans Kenderaan Komersial",
+    "description": "Perlindungan untuk lori, van, bas dan kenderaan perniagaan anda."
+  },
+  {
+    "path": "/rumah-bangunan/",
+    "title": "Insurans Rumah & Bangunan",
+    "description": "Lindungi kediaman dan bangunan yang bermakna untuk anda."
+  },
+  {
+    "path": "/perniagaan-kedai/",
+    "title": "Insurans Perniagaan & Kedai",
+    "description": "Perlindungan untuk premis, aset dan keperluan perniagaan anda."
+  },
+  {
+    "path": "/marin-bot/",
+    "title": "Insurans Marin & Bot Pelancong",
+    "description": "Perlindungan untuk bot, aktiviti pelancongan serta keperluan marin dan kargo."
+  },
+  {
+    "path": "/takaful/",
+    "title": "Pilihan Takaful",
+    "description": "Perlindungan yang sesuai untuk anda melalui pilihan takaful."
+  },
+  {
+    "path": "/roadtax/",
+    "title": "Renew Roadtax Malaysia",
+    "description": "Bantuan semakan pembaharuan LKM untuk kereta, motosikal dan kenderaan komersial. Hubungi Abdul Kata untuk pertanyaan roadtax."
+  },
+  {
+    "path": "/hubungi/",
+    "title": "Tentang & Hubungi Abdul Kata",
+    "description": "Kenali Abdul Kata bin Haji Burijin dari Semporna, Sabah. Pertanyaan insurans, takaful dan roadtax melalui WhatsApp 011-71187780."
+  },
+  {
+    "path": "/blog/",
+    "title": "Panduan Insurans Malaysia",
+    "description": "10 panduan tentang insurans kereta, NCD, banjir, motosikal, roadtax, takaful, rumah, perniagaan dan marin di Malaysia."
+  },
+  {
+    "path": "/blog/memahami-pilihan-insurans-kereta/",
+    "title": "Memahami Pilihan Insurans Kereta",
+    "description": "Kenali pilihan perlindungan sebelum memperbaharui insurans kereta anda."
+  },
+  {
+    "path": "/blog/memahami-ncd/",
+    "title": "Memahami NCD Sebelum Renew Insurans",
+    "description": "Apa itu NCD dan bagaimana ia berkaitan dengan premium insurans kereta anda?"
+  },
+  {
+    "path": "/blog/perlindungan-banjir/",
+    "title": "Perlindungan Banjir & Special Perils",
+    "description": "Semak perlindungan banjir sebelum anda memerlukannya."
+  },
+  {
+    "path": "/blog/panduan-insurans-motosikal/",
+    "title": "Panduan Renew Insurans Motosikal",
+    "description": "Perkara yang patut disemak sebelum memperbaharui perlindungan motosikal."
+  },
+  {
+    "path": "/blog/insurans-kenderaan-komersial/",
+    "title": "Insurans Lori, Van & Bas",
+    "description": "Kenali maklumat penting untuk perlindungan kenderaan perniagaan."
+  },
+  {
+    "path": "/blog/persediaan-renew-roadtax/",
+    "title": "Persediaan Renew Roadtax di Malaysia",
+    "description": "Sediakan maklumat yang betul supaya urusan pembaharuan lebih teratur."
+  },
+  {
+    "path": "/blog/insurans-atau-takaful/",
+    "title": "Insurans atau Takaful?",
+    "description": "Fahami konsep dan bandingkan perlindungan mengikut keperluan anda."
+  },
+  {
+    "path": "/blog/insurans-rumah-bangunan/",
+    "title": "Memahami Insurans Rumah & Bangunan",
+    "description": "Kenali perkara asas sebelum memilih perlindungan untuk kediaman anda."
+  },
+  {
+    "path": "/blog/perlindungan-perniagaan-kedai/",
+    "title": "Perlindungan untuk Perniagaan & Kedai",
+    "description": "Fahami perkara penting untuk perlindungan premis dan operasi perniagaan."
+  },
+  {
+    "path": "/blog/panduan-insurans-marin/",
+    "title": "Panduan Insurans Marin & Bot Pelancong",
+    "description": "Kenali maklumat yang diperlukan sebelum membuat semakan perlindungan marin."
+  },
+  {
+    "path": "/insurans-am-lain/",
+    "title": "Insurans Am Lain",
+    "description": "Bincangkan insurans perjalanan, peribadi, industri, marin dan kargo, kontraktor, pertanian serta liabiliti dengan Abdul Kata."
+  },
+  {
+    "path": "/ulasan/",
+    "title": "Ulasan Pelanggan Abdul Kata",
+    "description": "Tujuh petikan WhatsApp daripada pelanggan yang menggunakan perkhidmatan insurans dan roadtax Abdul Kata."
+  },
+  {
+    "path": "/privasi/",
+    "title": "Dasar Privasi",
+    "description": "Ketahui bagaimana pertanyaan dan maklumat anda dikendalikan oleh Insurans & Roadtax MY."
+  },
+  {
+    "path": "/terma/",
+    "title": "Terma Penggunaan",
+    "description": "Maklumat penggunaan laman, pertanyaan, sebut harga dan rujukan insurans."
+  }
+]

@@ -80,4 +80,3 @@ npx wrangler deploy --dry-run
 ```
 
 GitHub Actions runs both commands on pushes to `main` and pull requests. See `VALIDATION.md` for the completed checks and environment-specific limitations from initial delivery.
-

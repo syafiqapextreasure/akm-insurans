@@ -1,0 +1,146 @@
+{
+  "01-utama": {
+    "x": 490,
+    "y": 42,
+    "width": 401,
+    "height": 268
+  },
+  "02-perlindungan": {
+    "x": 470,
+    "y": 42,
+    "width": 384,
+    "height": 248
+  },
+  "03-insurans-kereta": {
+    "x": 563,
+    "y": 46,
+    "width": 461,
+    "height": 263
+  },
+  "04-insurans-motosikal": {
+    "x": 486,
+    "y": 42,
+    "width": 398,
+    "height": 253
+  },
+  "05-kenderaan-komersial": {
+    "x": 488,
+    "y": 40,
+    "width": 399,
+    "height": 205
+  },
+  "06-rumah-bangunan": {
+    "x": 505,
+    "y": 44,
+    "width": 414,
+    "height": 254
+  },
+  "07-perniagaan-kedai": {
+    "x": 493,
+    "y": 43,
+    "width": 404,
+    "height": 254
+  },
+  "08-marin-bot": {
+    "x": 489,
+    "y": 48,
+    "width": 400,
+    "height": 261
+  },
+  "09-takaful": {
+    "x": 563,
+    "y": 48,
+    "width": 461,
+    "height": 288
+  },
+  "10-renew-roadtax": {
+    "x": 552,
+    "y": 46,
+    "width": 452,
+    "height": 316
+  },
+  "11-tentang-hubungi": {
+    "x": 525,
+    "y": 45,
+    "width": 430,
+    "height": 284
+  },
+  "12-blog": {
+    "x": 488,
+    "y": 49,
+    "width": 399,
+    "height": 249
+  },
+  "13-blog-pilihan-insurans-kereta": {
+    "x": 504,
+    "y": 39,
+    "width": 412,
+    "height": 247
+  },
+  "14-blog-ncd": {
+    "x": 563,
+    "y": 40,
+    "width": 461,
+    "height": 256
+  },
+  "15-blog-banjir": {
+    "x": 488,
+    "y": 44,
+    "width": 399,
+    "height": 199
+  },
+  "16-blog-motosikal": {
+    "x": 488,
+    "y": 42,
+    "width": 399,
+    "height": 230
+  },
+  "17-blog-komersial": {
+    "x": 488,
+    "y": 47,
+    "width": 399,
+    "height": 224
+  },
+  "18-blog-roadtax": {
+    "x": 563,
+    "y": 44,
+    "width": 461,
+    "height": 225
+  },
+  "19-blog-takaful": {
+    "x": 512,
+    "y": 44,
+    "width": 419,
+    "height": 196
+  },
+  "20-blog-rumah": {
+    "x": 520,
+    "y": 42,
+    "width": 425,
+    "height": 257
+  },
+  "21-blog-perniagaan": {
+    "x": 563,
+    "y": 42,
+    "width": 461,
+    "height": 262
+  },
+  "22-blog-marin": {
+    "x": 492,
+    "y": 44,
+    "width": 402,
+    "height": 233
+  },
+  "23-insurans-am-lain": {
+    "x": 563,
+    "y": 45,
+    "width": 461,
+    "height": 288
+  },
+  "24-ulasan-pelanggan": {
+    "x": 563,
+    "y": 50,
+    "width": 461,
+    "height": 285
+  }
+}

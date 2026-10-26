@@ -1,0 +1,170 @@
+{
+  "01-utama": {
+    "width": 891,
+    "height": 1766,
+    "file": "01-utama.webp",
+    "source": "01-utama.png",
+    "bytes": 1570032
+  },
+  "02-perlindungan": {
+    "width": 854,
+    "height": 1840,
+    "file": "02-perlindungan.webp",
+    "source": "02-perlindungan.png",
+    "bytes": 1625900
+  },
+  "03-insurans-kereta": {
+    "width": 1024,
+    "height": 1536,
+    "file": "03-insurans-kereta.webp",
+    "source": "03-insurans-kereta.png",
+    "bytes": 1486330
+  },
+  "04-insurans-motosikal": {
+    "width": 884,
+    "height": 1778,
+    "file": "04-insurans-motosikal.webp",
+    "source": "04-insurans-motosikal.png",
+    "bytes": 1433332
+  },
+  "05-kenderaan-komersial": {
+    "width": 887,
+    "height": 1774,
+    "file": "05-kenderaan-komersial.webp",
+    "source": "05-kenderaan-komersial.png",
+    "bytes": 1499530
+  },
+  "06-rumah-bangunan": {
+    "width": 919,
+    "height": 1711,
+    "file": "06-rumah-bangunan.webp",
+    "source": "06-rumah-bangunan.png",
+    "bytes": 1411460
+  },
+  "07-perniagaan-kedai": {
+    "width": 897,
+    "height": 1754,
+    "file": "07-perniagaan-kedai.webp",
+    "source": "07-perniagaan-kedai.png",
+    "bytes": 1545100
+  },
+  "08-marin-bot": {
+    "width": 889,
+    "height": 1770,
+    "file": "08-marin-bot.webp",
+    "source": "08-marin-bot.png",
+    "bytes": 1511108
+  },
+  "09-takaful": {
+    "width": 1024,
+    "height": 1536,
+    "file": "09-takaful.webp",
+    "source": "09-takaful.png",
+    "bytes": 1494274
+  },
+  "10-renew-roadtax": {
+    "width": 1004,
+    "height": 1566,
+    "file": "10-renew-roadtax.webp",
+    "source": "10-renew-roadtax.png",
+    "bytes": 1514314
+  },
+  "11-tentang-hubungi": {
+    "width": 955,
+    "height": 1647,
+    "file": "11-tentang-hubungi.webp",
+    "source": "11-tentang-hubungi.png",
+    "bytes": 1546534
+  },
+  "12-blog": {
+    "width": 887,
+    "height": 1774,
+    "file": "12-blog.webp",
+    "source": "12-blog.png",
+    "bytes": 1488806
+  },
+  "13-blog-pilihan-insurans-kereta": {
+    "width": 916,
+    "height": 1716,
+    "file": "13-blog-pilihan-insurans-kereta.webp",
+    "source": "13-blog-pilihan-insurans-kereta.png",
+    "bytes": 1427450
+  },
+  "14-blog-ncd": {
+    "width": 1024,
+    "height": 1536,
+    "file": "14-blog-ncd.webp",
+    "source": "14-blog-ncd.png",
+    "bytes": 1457930
+  },
+  "15-blog-banjir": {
+    "width": 887,
+    "height": 1774,
+    "file": "15-blog-banjir.webp",
+    "source": "15-blog-banjir.png",
+    "bytes": 1407268
+  },
+  "16-blog-motosikal": {
+    "width": 887,
+    "height": 1774,
+    "file": "16-blog-motosikal.webp",
+    "source": "16-blog-motosikal.png",
+    "bytes": 1497084
+  },
+  "17-blog-komersial": {
+    "width": 887,
+    "height": 1774,
+    "file": "17-blog-komersial.webp",
+    "source": "17-blog-komersial.png",
+    "bytes": 1432196
+  },
+  "18-blog-roadtax": {
+    "width": 1024,
+    "height": 1536,
+    "file": "18-blog-roadtax.webp",
+    "source": "18-blog-roadtax.png",
+    "bytes": 1492498
+  },
+  "19-blog-takaful": {
+    "width": 931,
+    "height": 1689,
+    "file": "19-blog-takaful.webp",
+    "source": "19-blog-takaful.png",
+    "bytes": 1352412
+  },
+  "20-blog-rumah": {
+    "width": 945,
+    "height": 1665,
+    "file": "20-blog-rumah.webp",
+    "source": "20-blog-rumah.png",
+    "bytes": 1506690
+  },
+  "21-blog-perniagaan": {
+    "width": 1024,
+    "height": 1536,
+    "file": "21-blog-perniagaan.webp",
+    "source": "21-blog-perniagaan.png",
+    "bytes": 1607764
+  },
+  "22-blog-marin": {
+    "width": 894,
+    "height": 1760,
+    "file": "22-blog-marin.webp",
+    "source": "22-blog-marin.png",
+    "bytes": 1436686
+  },
+  "23-insurans-am-lain": {
+    "width": 1024,
+    "height": 1536,
+    "file": "23-insurans-am-lain.webp",
+    "source": "23-insurans-am-lain.png",
+    "bytes": 1540010
+  },
+  "24-ulasan-pelanggan": {
+    "width": 1024,
+    "height": 1536,
+    "file": "24-ulasan-pelanggan.webp",
+    "source": "24-ulasan-pelanggan.png",
+    "bytes": 1338824
+  }
+}
