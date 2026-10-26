@@ -27,3 +27,12 @@ The green hero curves, mint contact-banner waves, icons, text and buttons are na
 `chat-pattern.svg`, `favicon.svg` and inline interface SVGs are project-created vector artwork.
 
 Inter is self-hosted from `@fontsource/inter` under the SIL Open Font License. See `public/assets/INTER-LICENSE.txt`.
+
+
+## Detail refinement — 27 October 2026
+- Added six editorial detail images: bike-detail, home-interior, shop-interior, policy-review, marine-detail and home-flood. These are AI-generated illustrative images, not real customer/property records.
+- Added roadtax-banner.webp using the supplied reference's rear-view car, forest road and golden-light scene.
+- Replaced low-resolution video posters with AI-reconstructed 1536×1024 cover images based on the supplied frames. Actual MP4 footage is unchanged; these covers are not original extracted frames.
+- Added seven full-height copies of the supplied WhatsApp screenshots, edited with the built-in image tool to conceal policy documents, filenames, identifiers and the small profile photo where present. Visible conversation wording was visually compared to the supplied originals. These are edited copies, not pixel-identical originals. Original screenshots containing private records are not shipped.
+- All new public assets: public/assets/production/*.webp. Generation manifest and prompts are retained locally under outputs/production-assets/v4-* outside the deployment.
+- Service consideration images now match motorcycles, house contents/floods, shop interiors, marine operations and policy terms. Article hero and body images use separate assets on all ten posts.

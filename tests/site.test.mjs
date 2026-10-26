@@ -23,6 +23,13 @@ test('all genuine review excerpts are present without customer records',async()=
  const html=await readPage('/ulasan/');for(const review of reviews)assert.ok(html.includes(review.quote),review.quote);
  assert.ok(!/BQX9026|JUR4977|WKW9949|SWC3799|LA576|710212/.test(html));assert.ok(!html.includes('AggregateRating'));
 });
+
+test('article covers differ from their hero and every review has a full image',async()=>{
+ for(const a of articles){const html=await readPage(`/blog/${a.slug}/`);const hero=html.match(/class="hero-scene" src="([^"]+)"/)[1];const cover=html.match(/class="article-cover">[\s\S]*?<img src="([^"]+)"/)[1];assert.notEqual(hero,cover,a.slug);}
+ const html=await readPage('/ulasan/');assert.equal((html.match(/class="review-screenshot /g)||[]).length,7);
+ for(let i=1;i<=7;i++)assert.ok(html.includes(`data-review="${i}"`));
+ assert.ok(html.includes('class="review-dialog"'));assert.ok(html.includes('class="review-zoom"'));
+});
 test('Worker injects canonical origin into HTML and structured data',async()=>{
  const html=await readPage('/insurans-kereta/');
  const env={ASSETS:{fetch:async()=>new Response(html,{headers:{'Content-Type':'text/html','Content-Length':String(html.length)}})}};

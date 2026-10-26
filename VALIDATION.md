@@ -18,3 +18,11 @@
 The Windows execution environment blocks native subprocess creation (spawn EPERM), so local Wrangler/esbuild dry-run could not execute. GitHub Actions successfully ran npm ci, npm run check and npx wrangler deploy --dry-run on Linux for source commit 4e5916b1f9d78a057fccdb2a50b6ab8ed1f27515. All stages passed: https://github.com/syafiqapextreasure/akm-insurans/actions/runs/40372478109.
 
 The owner connected Cloudflare Workers Builds to the main branch. The compatibility-date correction in fc38d3a94bdf97bb053f870a4d17ce2a5d43378a deployed successfully before this visual revision. Subsequent pushes are checked by GitHub Actions and the connected Cloudflare build. Custom-domain setup is outside this revision.
+
+
+## Detail refinement validation — 27 October 2026
+- Eight Node tests pass, including ten distinct hero/body image pairs and all seven full-review image links.
+- 56 browser checks: 14 affected routes × 390, 768, 1440 and 2560px; no horizontal overflow, failed loaded images or portrait-caption/service-bar collisions.
+- Home biography and both video panels share top and bottom bounds on desktop. Mobile stacks without fixed heights.
+- Review dialog opens full-image fit, toggles zoom, closes and returns focus to its originating link. Document details are concealed in the delivered review images.
+- Roadtax banner now uses an opaque forest-road photograph with a native curved white/gold edge, matching the reference composition.

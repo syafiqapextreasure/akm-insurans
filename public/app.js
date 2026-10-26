@@ -49,3 +49,16 @@ function updateParallax(){scheduled=false;if(!parallax)return;const enabled=!mot
 function scheduleParallax(){if(!scheduled){scheduled=true;requestAnimationFrame(updateParallax);}}
 window.addEventListener('scroll',scheduleParallax,{passive:true});window.addEventListener('resize',scheduleParallax,{passive:true});motion.addEventListener('change',scheduleParallax);updateParallax();
 window.addEventListener('pageshow',()=>{document.body.classList.remove('modal-open');if(quoteDialog?.open)quoteDialog.close();});
+
+const reviewModal=$('.review-dialog');
+$$('[data-review]').forEach(link=>link.addEventListener('click',event=>{
+ if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||!reviewModal?.showModal)return;
+ event.preventDefault();$('.review-dialog-image',reviewModal).classList.remove('zoomed');$('.review-zoom',reviewModal).setAttribute('aria-pressed','false');$('.review-zoom',reviewModal).textContent='Zum +';$('.review-dialog-image img',reviewModal).src=link.getAttribute('href');
+ $('#review-title').textContent='Perbualan WhatsApp '+link.dataset.review+' / 7';
+ reviewModal.showModal();$('.review-dialog-image',reviewModal).scrollTop=0;document.body.classList.add('modal-open');
+}));
+$('.review-close')?.addEventListener('click',()=>reviewModal.close());
+reviewModal?.addEventListener('close',()=>document.body.classList.remove('modal-open'));
+reviewModal?.addEventListener('click',event=>{if(event.target===reviewModal){const r=reviewModal.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)reviewModal.close();}});
+
+$('.review-zoom')?.addEventListener('click',event=>{const zoomed=$('.review-dialog-image').classList.toggle('zoomed');event.currentTarget.setAttribute('aria-pressed',String(zoomed));event.currentTarget.textContent=zoomed?'Muat skrin':'Zum +';});
