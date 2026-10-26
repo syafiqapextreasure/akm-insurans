@@ -48,11 +48,12 @@ Preview defaults to `http://127.0.0.1:8787`. If the environment cannot launch Wr
 - `src/pages.mjs`: page layouts and route definitions.
 - `src/ui.mjs`: reusable HTML components, artwork framing and structured data.
 - `src/design-assets.json`: provenance and dimensions of the 24 approved designs.
-- `src/hero-crops.json`: individual photographic crop boundaries for the reference designs.
-- `public/assets/`: lossless artwork, original supplied videos, preview stills and self-hosted Inter fonts.
+- `src/hero-crops.json`: retained historical crop boundaries; no longer used by production components.
+- `public/assets/production/`: 21 standalone high-resolution scene and portrait derivatives; see ASSET-NOTES.md.
+- `public/assets/`: retained design references, original supplied videos, preview stills and self-hosted Inter fonts.
 - `public/styles.css`: responsive Signature Green layouts and animation.
-- `public/readability.css`: larger supporting typography, including 19px desktop body text at 1600px+ widths, 17px navigation/buttons and 16px tertiary/footer text.
-- `public/hero-refinement.css`: consistent curves, original photo framing and overlapping content panels.
+- `public/readability.css`: base supporting typography and responsive content layouts.
+- `public/visual-production.css`: shared hero curves, full-width banners/footer, image sizing and fluid desktop typography (27px body / 26px supporting text at 2560px).
 - `public/app.js`: accessible navigation, enquiry dialog, WhatsApp form, blog filters, video controls and restrained parallax.
 - `scripts/build.mjs`: generates complete HTML for every route.
 - `worker/index.mjs`: canonical-origin replacement, sitemap, robots, security headers and static asset delivery.
@@ -60,7 +61,7 @@ Preview defaults to `http://127.0.0.1:8787`. If the environment cannot launch Wr
 
 ## Artwork and content
 
-The artwork is the same approved design imagery, losslessly encoded as WebP with pixel equality checked against the source PNGs. SVG viewports crop the photo areas without redrawing or regenerating the images. Text, forms, controls, curves, icons and navigation are real HTML/CSS/SVG. The responsive implementation deliberately adapts image framing and increases type sizes for readability; it is not a flattened screenshot of each page.
+Production imagery consists of high-resolution derivatives reconstructed from the approved design references, plus a separate transparent portrait derived from the supplied photograph. Fine details can differ from the source mockups. Small mockup crops are no longer enlarged for production pages. Text, forms, controls, curves, icons and navigation are real HTML/CSS/SVG. The responsive implementation adapts image framing and scales type progressively for readability. See ASSET-NOTES.md for provenance and editing prompts.
 
 The two supplied videos are included unchanged and use click-to-play controls. Short visible-scene summaries are provided beneath the players; these are not claimed to be verbatim audio transcripts. No autoplay or audio-on-load is used.
 

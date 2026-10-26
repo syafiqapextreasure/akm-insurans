@@ -1,9 +1,12 @@
-import {mkdir,writeFile,cp,readFile} from 'node:fs/promises';
+import {mkdir,writeFile,cp,readFile,rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {getPages} from '../src/pages.mjs';
 import {layout} from '../src/ui.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url)),dist=path.join(root,'dist');
+// Never retain obsolete/generated source images in the deployment output.
+if(path.dirname(dist)!==path.resolve(root)||path.basename(dist)!=='dist')throw new Error('Unexpected build directory');
+await rm(dist,{recursive:true,force:true});
 await mkdir(dist,{recursive:true});
 await cp(path.join(root,'public'),dist,{recursive:true});
 const pages=getPages();
