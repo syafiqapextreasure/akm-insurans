@@ -51,25 +51,14 @@ window.addEventListener('scroll',scheduleParallax,{passive:true});window.addEven
 window.addEventListener('pageshow',()=>{document.body.classList.remove('modal-open');if(quoteDialog?.open)quoteDialog.close();});
 
 const reviewModal=$('.review-dialog');
-// Capture the click after a drag before any review link opens its dialog.
+// Automatically rotate reviews; arrows and keyboard remain available.
 $$('.review-carousel').forEach(carousel=>{
- const track=$('.review-grid',carousel),toggle=$('[data-autoplay]',carousel);
- let paused=motion.matches,hover=false,focused=false,drag=null,suppressClick=false;
- const sync=()=>{toggle.textContent=paused?'Main automatik':'Jeda';toggle.setAttribute('aria-pressed',String(paused));};
+ const track=$('.review-grid',carousel);
  const step=direction=>{const size=track.firstElementChild.getBoundingClientRect().width+20;const end=track.scrollWidth-track.clientWidth;track.scrollTo({left:direction>0&&track.scrollLeft>=end-3?0:Math.max(0,track.scrollLeft+direction*size),behavior:motion.matches?'instant':'smooth'});};
- sync();toggle.addEventListener('click',()=>{paused=!paused;sync();});
  $$('[data-slide]',carousel).forEach(button=>button.addEventListener('click',()=>step(Number(button.dataset.slide))));
- carousel.addEventListener('mouseenter',()=>hover=true);carousel.addEventListener('mouseleave',()=>hover=false);
- carousel.addEventListener('focusin',()=>focused=true);carousel.addEventListener('focusout',event=>{focused=carousel.contains(event.relatedTarget);});
- motion.addEventListener('change',()=>{if(motion.matches){paused=true;sync();}});
  track.addEventListener('keydown',event=>{if(event.target===track&&['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();step(event.key==='ArrowRight'?1:-1);}});
- track.addEventListener('pointerdown',event=>{if(event.pointerType!=='mouse'||event.button!==0)return;drag={x:event.clientX,left:track.scrollLeft,id:event.pointerId};suppressClick=false;});
- track.addEventListener('pointermove',event=>{if(!drag)return;const dx=event.clientX-drag.x;if(Math.abs(dx)>6){suppressClick=true;track.classList.add('dragging');track.setPointerCapture(drag.id);track.scrollLeft=drag.left-dx;}});
- const finish=()=>{drag=null;track.classList.remove('dragging');};
- track.addEventListener('pointerup',finish);track.addEventListener('pointercancel',finish);track.addEventListener('lostpointercapture',finish);
  track.addEventListener('dragstart',event=>event.preventDefault());
- track.addEventListener('click',event=>{if(suppressClick){event.preventDefault();event.stopImmediatePropagation();suppressClick=false;}},true);
- setInterval(()=>{if(paused||hover||focused||drag||document.hidden||document.querySelector('dialog[open]'))return;const box=track.getBoundingClientRect();if(box.bottom>0&&box.top<innerHeight)step(1);},5500);
+ setInterval(()=>{if(document.hidden||document.querySelector('dialog[open]'))return;const box=track.getBoundingClientRect();if(box.bottom>0&&box.top<innerHeight)step(1);},5500);
 });
 $$('[data-review]').forEach(link=>link.addEventListener('click',event=>{
  if(event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||!reviewModal?.showModal)return;

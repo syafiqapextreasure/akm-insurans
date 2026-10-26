@@ -225,7 +225,8 @@
 .carousel-controls{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:18px;color:#537064;font-size:clamp(14px,.9vw,22px)}
 .carousel-controls>span{margin-right:auto}
 .carousel-controls button{font:inherit;min-width:44px;min-height:44px;padding:8px 14px;border:1px solid #b9dacb;border-radius:10px;background:#eff9f4;color:#006447;cursor:pointer}
-.review-carousel .review-grid{position:relative;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#00a56c #edf6f1;padding:3px 2px 16px;cursor:grab;touch-action:pan-x pan-y}
+.review-carousel .review-grid{position:relative;display:flex;gap:20px;overflow:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;padding:3px 2px 16px;touch-action:pan-y}
+.review-carousel .review-grid::-webkit-scrollbar{display:none}
 .review-carousel .review-grid>*{flex:0 0 calc((100% - 80px)/5);min-width:0;margin:0;scroll-snap-align:start}
 .review-carousel .review-grid.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
 .review-carousel .review-grid .reveal{opacity:1;transform:none}
