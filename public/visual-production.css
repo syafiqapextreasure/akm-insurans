@@ -188,3 +188,58 @@
 .review-dialog-image img{width:auto;height:100%;max-height:100%;object-fit:contain}
 .review-dialog-image.zoomed img{width:100%;height:auto;max-height:none}
 .review-zoom{margin-left:auto;padding:10px 15px;border:1px solid #badacc;border-radius:8px;color:#006447;background:#eff8f3;font:inherit;font-size:15px;cursor:pointer}
+
+/* Consistent contact panels and proportional media. */
+.contact-grid{align-items:stretch;grid-template-columns:1.15fr 1fr .8fr}
+.contact-grid>aside,.contact-grid>form{min-width:0;height:100%}
+.contact-details{position:relative;isolation:isolate;padding:clamp(22px,1.5vw,40px);padding-bottom:260px;background:#005641}
+.contact-details>.artwork{position:absolute;inset:0;margin:0;width:100%;height:100%;z-index:-2;border-radius:0}
+.contact-details>.artwork img{width:100%;height:100%;object-fit:cover;object-position:60% bottom}
+.contact-details:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#005541 0%,#005541ed 35%,#00554170 65%,transparent 86%)}
+.contact-details small{font-size:clamp(15px,.95vw,25px)}
+.contact-details>a>.icon,.contact-details>p>.icon{width:clamp(42px,3vw,72px);height:clamp(42px,3vw,72px);padding:10px;border-radius:50%;background:#00ab69;color:white}
+.contact-review{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;background:linear-gradient(150deg,#ffffffd9,#eff9f4a8);padding:clamp(18px,1.5vw,36px)}
+.contact-review .quote-card{flex:0;box-shadow:none}
+.contact-review>.text-link{display:flex;justify-content:center;padding:16px;border-radius:10px;background:#e7f5ef;font-size:clamp(16px,1vw,25px);margin-top:22px}
+.about-intro{margin-bottom:clamp(24px,2vw,48px)!important;gap:clamp(24px,3vw,72px);align-items:start}
+.about-intro .video-player{height:auto;aspect-ratio:16/10}
+.facts-grid{position:relative;gap:clamp(14px,1.2vw,30px)}
+.facts-grid article{background:linear-gradient(140deg,#f0faf5,white);border-color:#d3e9df;border-radius:16px;padding:clamp(20px,1.5vw,36px)}
+.region-list a{padding:clamp(12px,1vw,24px);gap:clamp(16px,1.3vw,32px)}
+.region-list strong{font-size:clamp(21px,1.55vw,40px);line-height:1.2}
+.region-list .artwork{width:clamp(76px,6vw,150px);height:clamp(76px,6vw,150px)}
+.related-service-links a{padding:clamp(18px,1.4vw,34px);font-size:clamp(16px,1.1vw,29px);line-height:1.4}
+.related-service-links a>.icon:first-child{width:clamp(32px,2.5vw,64px);height:clamp(32px,2.5vw,64px);margin-bottom:14px}
+.related-service-links a>.icon:last-child{width:clamp(22px,1.4vw,36px);height:clamp(22px,1.4vw,36px)}
+.roadtax-banner>.roadtax-photo{position:absolute;inset:0 0 0 55%;z-index:-2;overflow:hidden}
+.roadtax-photo img{width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.roadtax-banner{background:#ffe51b}
+.blog-grid:not(.is-filtered) .featured{grid-template-columns:42% 1fr;min-height:0}
+.blog-grid:not(.is-filtered) .featured .article-image{min-height:0;height:clamp(260px,21vw,480px);overflow:hidden}
+.blog-grid:not(.is-filtered) .featured .artwork,.blog-grid:not(.is-filtered) .featured img{height:100%;width:100%;object-fit:cover}
+.blog-grid:not(.is-filtered) .featured .article-card-body{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(24px,3vw,72px)}
+.featured .article-card-body p{max-width:42em}
+
+/* A native scrolling track remains usable even without JavaScript. */
+.review-carousel{min-width:0}
+.carousel-controls{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:18px;color:#537064;font-size:clamp(14px,.9vw,22px)}
+.carousel-controls>span{margin-right:auto}
+.carousel-controls button{font:inherit;min-width:44px;min-height:44px;padding:8px 14px;border:1px solid #b9dacb;border-radius:10px;background:#eff9f4;color:#006447;cursor:pointer}
+.review-carousel .review-grid{position:relative;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#00a56c #edf6f1;padding:3px 2px 16px;cursor:grab;touch-action:pan-x pan-y}
+.review-carousel .review-grid>*{flex:0 0 calc((100% - 80px)/5);min-width:0;margin:0;scroll-snap-align:start}
+.review-carousel .review-grid.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none}
+.review-carousel .review-grid .reveal{opacity:1;transform:none}
+.review-carousel .review-screenshot figcaption{flex-wrap:wrap;gap:6px;font-size:clamp(13px,.85vw,21px)}
+.review-carousel .quote-card{padding:clamp(16px,1.15vw,28px);display:flex;flex-direction:column}
+.review-carousel .quote-card blockquote{font-size:clamp(16px,1vw,25px);margin:18px 0;flex:1}
+.review-carousel .review-source{font-size:clamp(15px,.9vw,22px)}
+.facts-grid article{min-width:0;overflow-wrap:anywhere}
+@media(max-width:1500px){.review-carousel .review-grid>*{flex-basis:calc((100% - 40px)/3)}}
+@media(max-width:1100px){.region-list{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr 1fr}.contact-review{grid-column:1/-1}.contact-details{padding-bottom:240px}.review-carousel .review-grid>*{flex-basis:calc((100% - 20px)/2)}}
+@media(max-width:700px){
+ .contact-grid{grid-template-columns:1fr}.contact-review{grid-column:auto}.contact-details{min-height:530px}.about-intro{padding:20px!important}.facts-grid{grid-template-columns:1fr 1fr}.facts-grid article{padding:16px}
+ .related-service-links a{display:block}.region-list strong{font-size:24px}
+ .review-carousel .review-grid>*{flex-basis:86%}.carousel-controls{flex-wrap:wrap}.carousel-controls>span{width:100%;font-size:14px}
+ .blog-grid:not(.is-filtered) .featured{display:block}.blog-grid:not(.is-filtered) .featured .article-image{height:230px}
+ .roadtax-banner>.roadtax-photo{inset:auto 0 0 0;height:170px}.roadtax-photo img{object-position:center 65%}
+}
