@@ -48,9 +48,11 @@ Preview defaults to `http://127.0.0.1:8787`. If the environment cannot launch Wr
 - `src/pages.mjs`: page layouts and route definitions.
 - `src/ui.mjs`: reusable HTML components, artwork framing and structured data.
 - `src/design-assets.json`: provenance and dimensions of the 24 approved designs.
+- `src/hero-crops.json`: individual photographic crop boundaries for the reference designs.
 - `public/assets/`: lossless artwork, original supplied videos, preview stills and self-hosted Inter fonts.
 - `public/styles.css`: responsive Signature Green layouts and animation.
 - `public/readability.css`: larger supporting typography, including 19px desktop body text at 1600px+ widths, 17px navigation/buttons and 16px tertiary/footer text.
+- `public/hero-refinement.css`: consistent curves, original photo framing and overlapping content panels.
 - `public/app.js`: accessible navigation, enquiry dialog, WhatsApp form, blog filters, video controls and restrained parallax.
 - `scripts/build.mjs`: generates complete HTML for every route.
 - `worker/index.mjs`: canonical-origin replacement, sitemap, robots, security headers and static asset delivery.
