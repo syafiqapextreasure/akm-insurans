@@ -44,7 +44,7 @@ export function getPages(){return [
  ...articles.map(a=>({path:`/blog/${a.slug}/`,title:a.title,description:a.intro,active:'blog',article:true,faq:a.faq,render:()=>article(a)})),
  {path:'/insurans-am-lain/',title:'Insurans Am Lain',description:'Bincangkan insurans perjalanan, peribadi, industri, marin dan kargo, kontraktor, pertanian serta liabiliti dengan Abdul Kata.',active:'products',render:extra},
  {path:'/ulasan/',title:'Ulasan Pelanggan Abdul Kata',description:'Tujuh petikan WhatsApp daripada pelanggan yang menggunakan perkhidmatan insurans dan roadtax Abdul Kata.',active:'reviews',render:reviewPage},
- {path:'/privasi/',title:'Dasar Privasi',description:'Ketahui bagaimana pertanyaan dan maklumat anda dikendalikan oleh AKM Maju - Insurans.',active:'legal',render:()=>legal('privasi')},
+ {path:'/privasi/',title:'Dasar Privasi',description:'Ketahui bagaimana pertanyaan dan maklumat anda dikendalikan oleh AKM Insurans.',active:'legal',render:()=>legal('privasi')},
  {path:'/terma/',title:'Terma Penggunaan',description:'Maklumat penggunaan laman, pertanyaan, sebut harga dan rujukan insurans.',active:'legal',render:()=>legal('terma')},
  {path:'/404/',title:'Halaman Tidak Ditemui',description:'Halaman yang anda cari tidak ditemui. Lihat pilihan perlindungan atau hubungi Abdul Kata.',active:'error',noindex:true,render:()=>`<div class="container error-page"><span class="eyebrow">404 · Halaman tidak ditemui</span><h1>Mari kembali ke<br>jalan yang betul.</h1><p>Pautan ini mungkin telah berubah. Pilihan perlindungan anda masih di sini.</p><div class="actions"><a href="/" class="button green">Kembali ke Utama ${icon('arrow')}</a><a href="/perlindungan/" class="button outline">Lihat perlindungan</a></div></div>`}
  ];}

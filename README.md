@@ -1,4 +1,4 @@
-# AKM Maju - Insurans
+# AKM Insurans
 
 Responsive Malay-language website based on the approved Signature Green designs. Includes 24 main/product/blog pages, plus privacy, terms and a real 404 page. The homepage is the only page with a large salesperson portrait in its hero; seven selected pages have the compact portrait contact strip.
 
