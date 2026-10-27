@@ -266,3 +266,8 @@
  .facts-grid .icon-circle{width:44px;height:44px;flex-shrink:0}
 }
 @media(max-width:359px){.facts-grid{grid-template-columns:1fr}.facts-grid article{flex-direction:row}.facts-grid h3{font-size:19px}}
+
+/* Preserve CTA contrast and carry the gold brand accent into live typography. */
+.main-nav .header-whatsapp,.main-nav .header-whatsapp:hover,.main-nav .header-whatsapp:focus-visible,.main-nav .header-whatsapp:active{color:#fff}
+.brand-wordmark .wordmark-akm{position:relative;display:inline-block;padding-bottom:.13em}
+.brand-wordmark .wordmark-akm::after{content:"";position:absolute;left:0;right:0;bottom:0;height:.09em;min-height:2px;border-radius:2px;background:#ffe21b}
