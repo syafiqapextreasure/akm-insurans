@@ -120,7 +120,7 @@
 .introduction h2{margin:0}
 .introduction>div>p{margin:0 0 12px}
 .introduction .video-card{display:contents}
-.introduction .video-player{grid-row:4;height:100%;min-height:0;aspect-ratio:16/10}
+.introduction .video-player{grid-row:4;width:100%;max-width:100%;min-width:0;height:100%;min-height:0;aspect-ratio:auto}
 .video-player video{object-position:center}
 .introduction .video-summary{grid-row:5;margin-top:8px}
 .introduction .bio-facts{grid-row:4;display:flex;flex-direction:column;justify-content:space-between;margin:0;gap:18px;padding:clamp(22px,1.5vw,40px);border:1px solid #cde6dc;border-radius:12px}
@@ -250,3 +250,8 @@
 .wordmark-akm{color:#005443}.wordmark-maju{color:#008954}.wordmark-dash{color:#b58c00}.wordmark-service{color:#101d3e}
 .site-footer .brand-wordmark .wordmark-akm,.site-footer .brand-wordmark .wordmark-service{color:#fff}.site-footer .brand-wordmark .wordmark-maju{color:#6be2aa}.site-footer .brand-wordmark .wordmark-dash{color:#ffe21b}
 @media(max-width:400px){.brand.brand-wordmark{font-size:19px;gap:.18em}}
+
+/* Keep replaced media inside its grid track even when the biography sets row height. */
+.video-player{min-width:0;max-width:100%;overflow:hidden}
+.video-player video{display:block;width:100%;max-width:100%;min-width:0}
+.site-header .brand.brand-wordmark{font-size:clamp(25px,1.8vw,46px)}
