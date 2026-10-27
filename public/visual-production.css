@@ -244,3 +244,9 @@
  .blog-grid:not(.is-filtered) .featured{display:block}.blog-grid:not(.is-filtered) .featured .article-image{height:230px}
  .roadtax-banner>.roadtax-photo{inset:auto 0 0 0;height:170px}.roadtax-photo img{object-position:center 65%}
 }
+
+/* Text-only brand: responsive live type stays sharp at every size. */
+.brand.brand-wordmark{display:inline-flex;align-items:baseline;gap:.22em;font-weight:850;letter-spacing:-.045em;white-space:nowrap;font-size:clamp(20px,1.45vw,38px);line-height:1.2}
+.wordmark-akm{color:#005443}.wordmark-maju{color:#008954}.wordmark-dash{color:#b58c00}.wordmark-service{color:#101d3e}
+.site-footer .brand-wordmark .wordmark-akm,.site-footer .brand-wordmark .wordmark-service{color:#fff}.site-footer .brand-wordmark .wordmark-maju{color:#6be2aa}.site-footer .brand-wordmark .wordmark-dash{color:#ffe21b}
+@media(max-width:400px){.brand.brand-wordmark{font-size:19px;gap:.18em}}

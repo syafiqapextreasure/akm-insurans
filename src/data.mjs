@@ -1,5 +1,5 @@
 export const business = {
-  name: 'Insurans & Roadtax MY', person: 'Abdul Kata bin Haji Burijin', phone: '011-71187780', international: '+601171187780', whatsapp: '601171187780', email: 'abdulkatahajiburijin@gmail.com', regions: 'Sabah • Sarawak • Semenanjung', updated: '2026-10-27'
+  name: 'AKM Maju - Insurans', person: 'Abdul Kata bin Haji Burijin', phone: '011-71187780', international: '+601171187780', whatsapp: '601171187780', email: 'abdulkatahajiburijin@gmail.com', regions: 'Sabah • Sarawak • Semenanjung', updated: '2026-10-27'
 };
 export const reviews = [
   {quote:'Cepat Servis ..', extra:'Kali kedua aku cari bang', label:'Pelanggan WhatsApp'},
