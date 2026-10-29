@@ -21,4 +21,21 @@
     allow_google_signals: false,
     allow_ad_personalization_signals: false
   });
+
+  // Send only a fixed interaction type; WhatsApp URLs can contain private messages.
+  const trackWhatsApp = source => gtag('event', 'whatsapp_click', {
+    interaction_source: source,
+    transport_type: 'beacon'
+  });
+  document.addEventListener('click', event => {
+    const link = event.target.closest?.('a[href]');
+    if (!link) return;
+    try {
+      const url = new URL(link.href, location.href);
+      if (url.hostname === 'wa.me' && url.protocol === 'https:') trackWhatsApp('link');
+    } catch { /* Ignore malformed links. */ }
+  }, true);
+  document.addEventListener('submit', event => {
+    if (event.target.matches?.('form.enquiry-form')) trackWhatsApp('enquiry_form');
+  }, true);
 })();

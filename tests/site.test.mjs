@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile,stat} from 'node:fs/promises';
+import {runInNewContext} from 'node:vm';
 import {getPages} from '../src/pages.mjs';
 import {reviews} from '../src/data.mjs';
 import {articles} from '../src/articles.mjs';
@@ -48,6 +49,21 @@ test('Analytics loads only for a valid configured measurement ID',async()=>{
  assert.ok(enabled.headers.get('Content-Security-Policy').includes('https://www.googletagmanager.com'));
  const invalid=await worker.fetch(new Request('https://insurance.example/privasi/'),makeEnv('G-X" onload="x'));
  assert.ok(!(await invalid.text()).includes('/analytics.js'));
+});
+test('WhatsApp analytics counts links and form submissions without message contents',async()=>{
+ const script=await readFile(new URL('../public/analytics.js',import.meta.url),'utf8');
+ const listeners={};const window={};
+ const document={currentScript:{dataset:{measurementId:'G-TEST123'}},referrer:'',head:{appendChild(){}},createElement:()=>({}),addEventListener:(type,fn)=>{listeners[type]=fn;}};
+ const location={origin:'https://insurance.example',pathname:'/hubungi/',href:'https://insurance.example/hubungi/'};
+ runInNewContext(script,{window,document,location,URL,Date,encodeURIComponent});
+ listeners.click({target:{closest:()=>({href:'https://wa.me/601171187780?text=private-message'})}});
+ listeners.click({target:{closest:()=>({href:'https://example.com/'})}});
+ listeners.submit({target:{matches:selector=>selector==='form.enquiry-form'}});
+ const events=window.dataLayer.map(args=>Array.from(args)).filter(args=>args[0]==='event');
+ assert.equal(events.length,2);
+ assert.equal(events[0][1],'whatsapp_click');assert.equal(events[0][2].interaction_source,'link');
+ assert.equal(events[1][2].interaction_source,'enquiry_form');
+ assert.ok(!JSON.stringify(events).includes('private-message'));
 });
 test('canonical domain override, sitemap, robots and 404 behavior',async()=>{
  assert.equal(siteOrigin(new Request('https://preview.example/'),{SITE_URL:'https://production.example/'}),'https://production.example');assert.throws(()=>siteOrigin(new Request('https://preview.example/'),{SITE_URL:'http://unsafe.example/'}));
