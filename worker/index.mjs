@@ -14,15 +14,21 @@ const security={
 };
 export default {async fetch(request,env){
  const url=new URL(request.url),origin=siteOrigin(request,env);
+ const measurementId=typeof env.GA_MEASUREMENT_ID==='string'&&/^G-[A-Z0-9]+$/.test(env.GA_MEASUREMENT_ID)?env.GA_MEASUREMENT_ID:null;
  if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405,headers:{Allow:'GET, HEAD',...security}});
  let response;
  if(url.pathname==='/sitemap.xml')response=new Response(sitemap(origin),{headers:{'Content-Type':'application/xml; charset=utf-8','Cache-Control':'public, max-age=3600'}});
  else if(url.pathname==='/robots.txt')response=new Response(`User-agent: *\nAllow: /\nDisallow: /404/\nSitemap: ${origin}/sitemap.xml\n`,{headers:{'Content-Type':'text/plain; charset=utf-8','Cache-Control':'public, max-age=3600'}});
  else response=await env.ASSETS.fetch(request);
  const headers=new Headers(response.headers);for(const [key,value]of Object.entries(security))headers.set(key,value);
+ if(measurementId){headers.set('Content-Security-Policy',security['Content-Security-Policy'].replace("script-src 'self'", "script-src 'self' https://www.googletagmanager.com").replace("img-src 'self' data:", "img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com").replace("connect-src 'self'", "connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com"));}
  const isText=headers.get('Content-Type')?.includes('text/html')||url.pathname==='/llms.txt';
  if(isText&&request.method!=='HEAD'){
-  const text=(await response.text()).replaceAll('__SITE_ORIGIN__',origin);
+  let text=(await response.text()).replaceAll('__SITE_ORIGIN__',origin);
+  if(measurementId&&headers.get('Content-Type')?.includes('text/html')){
+   text=text.replace('</head>',`<script defer src="/analytics.js" data-measurement-id="${measurementId}"></script></head>`);
+   if(url.pathname==='/privasi/')text=text.replace('Laman ini tidak memasang kuki pengiklanan atau alat analitik pihak ketiga.','Laman ini menggunakan Google Analytics untuk memahami penggunaan laman. Google Analytics boleh menggunakan kuki dan memproses maklumat seperti halaman yang dilawati, jenis peranti dan data teknikal.');
+  }
   headers.delete('Content-Length');headers.delete('ETag');headers.set('Cache-Control','public, max-age=0, must-revalidate');
   if(response.status===404||url.pathname==='/404/')headers.set('X-Robots-Tag','noindex');
   return new Response(text,{status:response.status,headers});

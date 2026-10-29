@@ -35,6 +35,20 @@ test('Worker injects canonical origin into HTML and structured data',async()=>{
  const env={ASSETS:{fetch:async()=>new Response(html,{headers:{'Content-Type':'text/html','Content-Length':String(html.length)}})}};
  const response=await worker.fetch(new Request('https://insurance.example/insurans-kereta/?campaign=test'),env);const text=await response.text();assert.equal(response.status,200);assert.ok(text.includes('href="https://insurance.example/insurans-kereta/"'));assert.ok(!text.includes('__SITE_ORIGIN__'));assert.ok(!text.includes('?campaign=test'));assert.equal(response.headers.get('Content-Length'),null);assert.equal(response.headers.get('X-Content-Type-Options'),'nosniff');assert.ok(response.headers.get('Content-Security-Policy').includes("frame-ancestors 'none'"));
 });
+test('Analytics loads only for a valid configured measurement ID',async()=>{
+ const html=await readPage('/privasi/');
+ const makeEnv=id=>({GA_MEASUREMENT_ID:id,ASSETS:{fetch:async()=>new Response(html,{headers:{'Content-Type':'text/html; charset=utf-8'}})}});
+ const disabled=await worker.fetch(new Request('https://insurance.example/privasi/'),makeEnv(undefined));
+ assert.ok(!(await disabled.text()).includes('/analytics.js'));
+ assert.ok(!disabled.headers.get('Content-Security-Policy').includes('googletagmanager.com'));
+ const enabled=await worker.fetch(new Request('https://insurance.example/privasi/'),makeEnv('G-TEST123'));
+ const text=await enabled.text();
+ assert.ok(text.includes('data-measurement-id="G-TEST123"'));
+ assert.ok(text.includes('Laman ini menggunakan Google Analytics'));
+ assert.ok(enabled.headers.get('Content-Security-Policy').includes('https://www.googletagmanager.com'));
+ const invalid=await worker.fetch(new Request('https://insurance.example/privasi/'),makeEnv('G-X" onload="x'));
+ assert.ok(!(await invalid.text()).includes('/analytics.js'));
+});
 test('canonical domain override, sitemap, robots and 404 behavior',async()=>{
  assert.equal(siteOrigin(new Request('https://preview.example/'),{SITE_URL:'https://production.example/'}),'https://production.example');assert.throws(()=>siteOrigin(new Request('https://preview.example/'),{SITE_URL:'http://unsafe.example/'}));
  const xml=sitemap('https://production.example');assert.equal((xml.match(/<loc>/g)||[]).length,27);assert.ok(!xml.includes('/404/'));assert.ok(xml.includes('/blog/memahami-ncd/'));
