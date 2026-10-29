@@ -50,6 +50,11 @@
     "description": "Bantuan semakan pembaharuan LKM untuk kereta, motosikal dan kenderaan komersial. Hubungi Abdul Kata untuk pertanyaan roadtax."
   },
   {
+    "path": "/sub-ejen/",
+    "title": "Peluang Sub Ejen Insurans Am",
+    "description": "Terokai peluang menjadi sub ejen insurans am bersama AKM Insurans. Hubungi kami untuk maklumat pelantikan dan komisen."
+  },
+  {
     "path": "/hubungi/",
     "title": "Tentang & Hubungi Abdul Kata",
     "description": "Kenali Abdul Kata bin Haji Burijin dari Semporna, Sabah. Pertanyaan insurans, takaful dan roadtax melalui WhatsApp 011-71187780."
@@ -122,7 +127,7 @@
   {
     "path": "/privasi/",
     "title": "Dasar Privasi",
-    "description": "Ketahui bagaimana pertanyaan dan maklumat anda dikendalikan oleh Insurans & Roadtax MY."
+    "description": "Ketahui bagaimana pertanyaan dan maklumat anda dikendalikan oleh AKM Insurans."
   },
   {
     "path": "/terma/",

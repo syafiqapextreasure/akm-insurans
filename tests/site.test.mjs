@@ -8,7 +8,7 @@ import worker,{siteOrigin,sitemap} from '../worker/index.mjs';
 const pages=getPages(),routes=new Set(pages.map(p=>p.path));
 const readPage=p=>readFile(new URL(`../dist${p==='/'?'/':p}index.html`,import.meta.url),'utf8');
 test('24 requested pages plus privacy, terms and error page are fully rendered',async()=>{
- assert.equal(pages.length,27);assert.equal(articles.length,10);assert.equal(reviews.length,7);
+ assert.equal(pages.length,28);assert.equal(articles.length,10);assert.equal(reviews.length,7);
  const titles=new Set();
  for(const page of pages){const html=await readPage(page.path);assert.equal((html.match(/<h1[ >]/g)||[]).length,1,page.path);assert.ok(html.includes('<html lang="ms-MY">'));assert.ok(!html.includes('undefined'),page.path);assert.ok(!html.includes('NaN'),page.path);const title=html.match(/<title>(.*?)<\/title>/s)?.[1];assert.ok(!titles.has(title),'duplicate title');titles.add(title);assert.ok(html.includes('name="description"'));assert.ok(html.includes('rel="canonical"'));const data=JSON.parse(html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)[1]);assert.equal(data['@context'],'https://schema.org');assert.ok(data['@graph'].some(x=>x['@type']==='WebPage'));if(page.article)assert.ok(data['@graph'].some(x=>x['@type']==='Article'));if(page.faq)assert.equal(data['@graph'].find(x=>x['@type']==='FAQPage').mainEntity.length,page.faq.length);}
 });
@@ -37,7 +37,7 @@ test('Worker injects canonical origin into HTML and structured data',async()=>{
 });
 test('canonical domain override, sitemap, robots and 404 behavior',async()=>{
  assert.equal(siteOrigin(new Request('https://preview.example/'),{SITE_URL:'https://production.example/'}),'https://production.example');assert.throws(()=>siteOrigin(new Request('https://preview.example/'),{SITE_URL:'http://unsafe.example/'}));
- const xml=sitemap('https://production.example');assert.equal((xml.match(/<loc>/g)||[]).length,26);assert.ok(!xml.includes('/404/'));assert.ok(xml.includes('/blog/memahami-ncd/'));
+ const xml=sitemap('https://production.example');assert.equal((xml.match(/<loc>/g)||[]).length,27);assert.ok(!xml.includes('/404/'));assert.ok(xml.includes('/blog/memahami-ncd/'));
  const robots=await worker.fetch(new Request('https://production.example/robots.txt'),{});assert.ok((await robots.text()).includes('Sitemap: https://production.example/sitemap.xml'));
  const response=await worker.fetch(new Request('https://production.example/no-such-page/'),{ASSETS:{fetch:async()=>new Response(await readPage('/404/'),{status:404,headers:{'Content-Type':'text/html'}})}});assert.equal(response.status,404);assert.equal(response.headers.get('X-Robots-Tag'),'noindex');
 });
