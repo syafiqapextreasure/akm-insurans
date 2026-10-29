@@ -10,5 +10,6 @@
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
   },
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  "vars": { "GA_MEASUREMENT_ID": "G-78RBBS3P8P" }
 }
